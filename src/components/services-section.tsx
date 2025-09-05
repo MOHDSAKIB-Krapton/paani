@@ -1,6 +1,14 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Home, Building2, Factory, Truck, Wrench, Phone } from "lucide-react"
+"use client";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Home, Building2, Factory, Truck, Wrench, Phone } from "lucide-react";
 
 const services = [
   {
@@ -13,71 +21,103 @@ const services = [
   {
     icon: Building2,
     title: "Commercial Solutions",
-    description: "Comprehensive water distribution for offices, restaurants, and retail establishments.",
+    description:
+      "Comprehensive water distribution for offices, restaurants, and retail establishments.",
     features: ["Bulk delivery", "Custom contracts", "Priority support"],
   },
   {
     icon: Factory,
     title: "Industrial Distribution",
-    description: "Large-scale water supply for manufacturing and industrial facilities with specialized requirements.",
-    features: ["High-volume supply", "Technical support", "Compliance monitoring"],
+    description:
+      "Large-scale water supply for manufacturing and industrial facilities with specialized requirements.",
+    features: [
+      "High-volume supply",
+      "Technical support",
+      "Compliance monitoring",
+    ],
   },
   {
     icon: Truck,
     title: "Emergency Delivery",
-    description: "24/7 emergency water supply services for urgent situations and disaster response.",
+    description:
+      "24/7 emergency water supply services for urgent situations and disaster response.",
     features: ["Rapid response", "24/7 availability", "Crisis management"],
   },
   {
     icon: Wrench,
     title: "Installation & Maintenance",
-    description: "Professional installation and ongoing maintenance of water distribution systems.",
+    description:
+      "Professional installation and ongoing maintenance of water distribution systems.",
     features: ["Expert installation", "Regular maintenance", "System upgrades"],
   },
   {
     icon: Phone,
     title: "Consultation Services",
-    description: "Expert consultation for water distribution planning and system optimization.",
+    description:
+      "Expert consultation for water distribution planning and system optimization.",
     features: ["System analysis", "Efficiency planning", "Cost optimization"],
   },
-]
+];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">Comprehensive Water Distribution Services</h2>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            From residential delivery to industrial solutions, we provide reliable water distribution services tailored
-            to your specific needs.
+    <section id="services" className="relative py-28 overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background" />
+      <div className="absolute top-20 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+
+      <div className="relative container mx-auto px-6 lg:px-12">
+        {/* Section header */}
+        <div className="text-center space-y-6 mb-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Comprehensive{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              Water Services
+            </span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            From residential delivery to industrial solutions, we ensure
+            dependable, high-quality water distribution tailored to every
+            environment.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Service cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border bg-card">
-              <CardHeader className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <service.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+            <Card
+              key={index}
+              className="group relative bg-white/5 backdrop-blur-xl border border-white/20 shadow-lg rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <CardHeader className="space-y-5">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                  <service.icon className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">{service.description}</CardDescription>
+                  <CardTitle className="text-xl font-bold mb-2 tracking-tight">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2">
+              <CardContent className="space-y-6">
+                <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
+                    <li
+                      key={featureIndex}
+                      className="flex items-center text-sm text-foreground/80"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent mr-3" />
                       {feature}
                     </li>
                   ))}
                 </ul>
                 <Button
                   variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  className="w-full rounded-full border-primary/40 text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white transition-all"
                 >
                   Learn More
                 </Button>
@@ -87,5 +127,5 @@ export function ServicesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

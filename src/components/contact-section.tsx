@@ -1,13 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -16,106 +14,107 @@ export function ContactSection() {
     phone: "",
     service: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="py-24 relative bg-gradient-to-br from-primary/5 via-muted/20 to-transparent overflow-hidden"
+    >
+      {/* decorative blur */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-primary/5 blur-3xl opacity-50 pointer-events-none" />
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-balance">Get in Touch</h2>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Ready to start your water distribution service? Contact us today for a personalized quote and consultation.
+          <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ready to start your water distribution service? Contact us today for
+            a personalized quote and consultation.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <Card className="border-border bg-card">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span>Location</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  123 Water Distribution Blvd
-                  <br />
-                  Suite 100
-                  <br />
-                  City, State 12345
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-card">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>Phone</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Main: (555) 123-4567
-                  <br />
-                  Emergency: (555) 987-6543
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-card">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span>Email</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  info@aquaflow.com
-                  <br />
-                  support@aquaflow.com
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-card">
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-primary" />
-                  <span>Hours</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Mon-Fri: 7:00 AM - 7:00 PM
-                  <br />
-                  Sat-Sun: 8:00 AM - 5:00 PM
-                  <br />
-                  Emergency: 24/7
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: MapPin,
+                title: "Location",
+                content: (
+                  <>
+                    123 Water Distribution Blvd
+                    <br /> Suite 100 <br /> City, State 12345
+                  </>
+                ),
+              },
+              {
+                icon: Phone,
+                title: "Phone",
+                content: (
+                  <>
+                    Main: (555) 123-4567
+                    <br /> Emergency: (555) 987-6543
+                  </>
+                ),
+              },
+              {
+                icon: Mail,
+                title: "Email",
+                content: (
+                  <>
+                    info@aquaflow.com
+                    <br /> support@aquaflow.com
+                  </>
+                ),
+              },
+              {
+                icon: Clock,
+                title: "Hours",
+                content: (
+                  <>
+                    Mon–Fri: 7:00 AM – 7:00 PM
+                    <br /> Sat–Sun: 8:00 AM – 5:00 PM
+                    <br /> Emergency: 24/7
+                  </>
+                ),
+              },
+            ].map((item, i) => (
+              <Card
+                key={i}
+                className="border border-border/40 backdrop-blur-xl bg-card/80 shadow-md hover:shadow-xl transition-all"
+              >
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <item.icon className="h-5 w-5 text-primary" />
+                    <span>{item.title}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.content}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="border-border bg-card">
+            <Card className="border border-border/40 backdrop-blur-xl bg-card/80 shadow-lg">
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
               </CardHeader>
@@ -132,7 +131,7 @@ export function ContactSection() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="border-border focus:ring-primary"
+                        className="border-border focus:ring-2 focus:ring-primary"
                       />
                     </div>
                     <div className="space-y-2">
@@ -146,7 +145,7 @@ export function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-border focus:ring-primary"
+                        className="border-border focus:ring-2 focus:ring-primary"
                       />
                     </div>
                   </div>
@@ -162,7 +161,7 @@ export function ContactSection() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="border-border focus:ring-primary"
+                        className="border-border focus:ring-2 focus:ring-primary"
                       />
                     </div>
                     <div className="space-y-2">
@@ -179,10 +178,16 @@ export function ContactSection() {
                         <option value="">Select a service</option>
                         <option value="residential">Residential Supply</option>
                         <option value="commercial">Commercial Solutions</option>
-                        <option value="industrial">Industrial Distribution</option>
+                        <option value="industrial">
+                          Industrial Distribution
+                        </option>
                         <option value="emergency">Emergency Delivery</option>
-                        <option value="maintenance">Installation & Maintenance</option>
-                        <option value="consultation">Consultation Services</option>
+                        <option value="maintenance">
+                          Installation & Maintenance
+                        </option>
+                        <option value="consultation">
+                          Consultation Services
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -198,12 +203,15 @@ export function ContactSection() {
                       onChange={handleChange}
                       required
                       rows={4}
-                      className="border-border focus:ring-primary"
+                      className="border-border focus:ring-2 focus:ring-primary"
                       placeholder="Tell us about your water distribution needs..."
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -213,5 +221,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

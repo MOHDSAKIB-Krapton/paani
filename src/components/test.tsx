@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Droplets } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function Header() {
+export function TestSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -26,10 +26,10 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            {["Home", "Distribution", "Contact"].map((item) => (
+            {["Home", "Services", "About", "Contact"].map((item) => (
               <a
                 key={item}
-                href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                href={`#${item.toLowerCase()}`}
                 className="text-sm tracking-[0.15em] uppercase font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {item}
@@ -69,10 +69,10 @@ export function Header() {
             className="md:hidden absolute top-20 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/20"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col space-y-6">
-              {["Home", "Distribution", "Contact"].map((item) => (
+              {["Home", "Services", "About", "Contact"].map((item) => (
                 <a
                   key={item}
-                  href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                  href={`#${item.toLowerCase()}`}
                   className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >

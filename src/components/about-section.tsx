@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Leaf, Clock } from "lucide-react";
 
@@ -10,82 +12,86 @@ const stats = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="relative py-28 overflow-hidden">
+      {/* Background Accents */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+      <div className="absolute top-20 left-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-accent/10 rounded-full blur-3xl" />
+
+      <div className="relative container mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-balance">
-                Leading Water Distribution Excellence Since 2008
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                Leading{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                  Water Distribution
+                </span>{" "}
+                Excellence Since 2008
               </h2>
-              <p className="text-lg text-muted-foreground text-pretty">
-                AquaFlow has been at the forefront of water distribution
-                services, providing reliable, sustainable, and high-quality
-                water solutions to communities and businesses across the region.
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                AquaFlow has been at the forefront of water distribution,
+                delivering reliable, sustainable, and premium-quality solutions
+                to communities and businesses across the region.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Mission</h3>
-                <p className="text-muted-foreground">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
                   To ensure every customer has access to clean, safe, and
-                  reliable water through innovative distribution solutions and
-                  exceptional service.
+                  dependable water through innovative distribution solutions and
+                  world-class service.
                 </p>
               </div>
 
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold">Our Values</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
-                    Quality and safety in every drop
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
-                    Environmental sustainability
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
-                    Customer-first approach
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
-                    Innovation and reliability
-                  </li>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold">Our Values</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  {[
+                    "Quality and safety in every drop",
+                    "Environmental sustainability",
+                    "Customer-first approach",
+                    "Innovation and reliability",
+                  ].map((value, i) => (
+                    <li key={i} className="flex items-center text-base">
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-accent mr-3 shadow-sm" />
+                      {value}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Image and Stats */}
-          <div className="space-y-8">
-            <div className="aspect-video rounded-2xl overflow-hidden">
+          {/* Image & Stats */}
+          <div className="space-y-10">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl ring-1 ring-white/20">
               <img
                 src="../images/professional-water-distribution-team-working-with-.jpg"
                 alt="AquaFlow team and facilities"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="text-center p-6 border-border bg-card"
+                  className="group relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
                 >
-                  <CardContent className="space-y-3 p-0">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto">
-                      <stat.icon className="h-6 w-6 text-primary" />
+                  <CardContent className="space-y-4 p-6 text-center">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto shadow-md group-hover:scale-105 transition-transform">
+                      <stat.icon className="h-7 w-7 text-white" />
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary">
+                      <div className="text-3xl font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                         {stat.value}
                       </div>
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-sm text-muted-foreground tracking-wide">
                         {stat.label}
                       </div>
                     </div>
