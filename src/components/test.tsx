@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Droplets } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function TestSection() {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
