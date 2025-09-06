@@ -12,10 +12,10 @@ export const ALLINFORMATION = {
   EMAIL: "purelaywater@gmail.com",
 
   // SOCIAL MEDIA LINKS
-  FACEBOOK_LINK: "https://www.facebook.com/purelaywater",
+  FACEBOOK_LINK: "https://www.facebook.com/share/17DtK96cvK/",
   INSTAGRAM_LINK: "https://www.instagram.com/purelaywater",
-  TWITTER_LINK: "https://www.twitter.com/purelaywater",
-  LINKEDIN_LINK: "https://www.linkedin.com/company/purelaywater",
+  TWITTER_LINK: "https://www.x.com/purelaywater1",
+  LINKEDIN_LINK: "https://www.linkedin.com/in/purelay-water-9a4b82382",
   OPENING_HOURS: "Open 24 hours, 7 days a week",
 
   // ADDRESS DETAILS

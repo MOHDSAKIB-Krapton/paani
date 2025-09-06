@@ -1,3 +1,5 @@
+import { ALLINFORMATION } from "@/constant";
+
 export const organizationSchema = () => {
   return JSON.stringify({
     "@context": "http://schema.org",
@@ -7,14 +9,14 @@ export const organizationSchema = () => {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+91-5551234567", // Main number
+        telephone: ALLINFORMATION.PHONE_NUMBER, // Main number
         contactType: "Customer support",
         contactOption: "TollFree",
         availableLanguage: ["English", "Hindi"],
       },
       {
         "@type": "ContactPoint",
-        telephone: "+91-5559876543", // Emergency / 24x7
+        telephone: ALLINFORMATION.EMERGENCY_NUMBER, // Emergency / 24x7
         contactType: "Emergency support",
         contactOption: "TollFree",
         availableLanguage: ["English", "Hindi"],
@@ -22,11 +24,10 @@ export const organizationSchema = () => {
     ],
     logo: "https://purelaywater.com/images/logo-full.webp",
     sameAs: [
-      "https://www.facebook.com/purelaywater",
-      "https://twitter.com/purelaywater",
-      "https://www.linkedin.com/company/purelaywater",
-      "https://www.instagram.com/purelaywater/",
-      "https://www.youtube.com/@purelaywater",
+      ALLINFORMATION.FACEBOOK_LINK,
+      ALLINFORMATION.TWITTER_LINK,
+      ALLINFORMATION.LINKEDIN_LINK,
+      ALLINFORMATION.INSTAGRAM_LINK,
     ],
     description:
       "PureLayWater provides clean, fresh, and reliable water delivery services for homes, offices, and industries, available 24/7 with emergency support.",
