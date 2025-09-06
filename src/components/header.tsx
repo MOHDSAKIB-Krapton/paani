@@ -65,9 +65,7 @@ export function Header() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden absolute top-20 left-0 w-full bg-background/95 backdrop-blur-xl border-b border-white/20"
+            className="md:hidden relative w-full bg-background/95 backdrop-blur-xl border-b border-white/20"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col space-y-6">
               {["Home", "Distribution", "Contact"].map((item) => (

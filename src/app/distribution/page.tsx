@@ -115,18 +115,24 @@ export default function DistributionPage() {
           </div>
         </section>
 
-        {/* How We Distribute (Vertical Steps) */}
+        {/* How We Distribute */}
         <section className="space-y-12">
           <h2 className="text-3xl font-bold text-center">How We Distribute</h2>
+
           <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-7.5 top-0 h-full w-0.5 bg-primary/30"></div>
-            <div className="space-y-24">
+            {/* Vertical line */}
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-primary/30" />
+
+            <div className="space-y-16">
               {steps.map((step, i) => (
-                <div key={i} className="relative flex items-start space-x-4 ">
-                  <div className="z-10 h-16 w-16 flex items-center justify-center bg-primary rounded-full text-background">
-                    <step.icon className="h-5 w-5" />
+                <div key={i} className="relative flex items-start gap-6">
+                  {/* Circle */}
+                  <div className="z-10 shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-background">
+                    <step.icon className="h-6 w-6" />
                   </div>
-                  <div className="space-y-2">
+
+                  {/* Text */}
+                  <div className="flex-1 space-y-2">
                     <h3 className="font-semibold text-xl">{step.title}</h3>
                     <p className="text-muted-foreground">{step.desc}</p>
                   </div>

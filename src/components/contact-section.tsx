@@ -132,14 +132,13 @@ export function ContactSection() {
         </div>
 
         {/* Map Section */}
-        <div className="w-[60%] mx-auto rounded-4xl p-1 bg-white h-[400px] overflow-hidden shadow-lg">
+        <div className="max-w-4xl aspect-[16/9] w-full mx-auto rounded-4xl p-1 bg-white h-[400px] overflow-hidden shadow-lg">
           <iframe
             src={`https://www.google.com/maps?q=${ALLINFORMATION.LAT},${ALLINFORMATION.LNG}&hl=es;z=14&output=embed`}
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
-            loading="lazy"
           ></iframe>
         </div>
       </div>

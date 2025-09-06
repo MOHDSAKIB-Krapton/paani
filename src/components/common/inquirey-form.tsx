@@ -267,7 +267,7 @@ const InquiryForm = ({
   }
 
   return (
-    <section className="relative p-12 md:p-16 max-w-6xl mx-auto">
+    <section className="relative p-8 md:p-12 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Text content */}
         <div className="space-y-6">
@@ -283,10 +283,7 @@ const InquiryForm = ({
           </p>
         </div>
 
-        {/* Form card */}
-        <div className="bg-gray-50  rounded-3xl p-10 shadow-sm">
-          {formContent}
-        </div>
+        {formContent}
       </div>
     </section>
   );
