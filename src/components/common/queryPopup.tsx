@@ -18,7 +18,7 @@ export default function QueryPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (pathname !== "/contact") setOpen(true);
-    }, 5000); // popup after 5s
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
