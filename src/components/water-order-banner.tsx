@@ -4,7 +4,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ALLINFORMATION } from "@/constant";
 
-export default function WaterOrderBanner() {
+type WaterOrderBannerProps = {
+  onOrderNow: (quantity: string, bottleType?: string) => void;
+};
+
+export default function WaterOrderBanner({
+  onOrderNow,
+}: WaterOrderBannerProps) {
   const packs = [
     {
       size: "200ml",
@@ -66,7 +72,10 @@ export default function WaterOrderBanner() {
                   <strong>PURELAY</strong> Premium Drinking Water with Added
                   Minerals {pack.size} (Pack of {pack.quantity})
                 </p>
-                <Button className="w-full mt-4 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white font-semibold py-6 text-lg hover:from-primary/90 hover:to-primary cursor-pointer">
+                <Button
+                  onClick={() => onOrderNow(pack.size)}
+                  className="w-full mt-4 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white font-semibold py-6 text-lg hover:from-primary/90 hover:to-primary cursor-pointer"
+                >
                   Order Now
                 </Button>
               </div>

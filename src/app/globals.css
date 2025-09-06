@@ -127,7 +127,7 @@
   * {
     @apply border-border outline-ring/50;
     /* @apply border border-red-500; */
-
+    scroll-behavior: smooth;
   }
 
   body {

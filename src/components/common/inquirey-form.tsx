@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,15 +28,19 @@ const quantityOptions = ["200ml", "500ml", "1L"];
 
 const bottleTypeOptions = ["Purelay"];
 
+type InquiryFormProps = {
+  variant?: "section" | "dialog";
+  title?: string;
+  description?: string;
+  preFillData?: { quantity: string; bottleType: string };
+};
+
 const InquiryForm = ({
   variant = "section",
   title,
   description,
-}: {
-  variant?: "section" | "dialog";
-  title?: string;
-  description?: string;
-}) => {
+  preFillData,
+}: InquiryFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,10 +49,20 @@ const InquiryForm = ({
     state: "",
     message: "",
     lineOfWork: "Distributor",
-    quantity: "1L",
-    bottleType: "Purelay",
+    quantity: preFillData?.quantity || "1L",
+    bottleType: preFillData?.bottleType || "Purelay",
   });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (preFillData) {
+      setFormData((prev) => ({
+        ...prev,
+        quantity: preFillData.quantity,
+        bottleType: preFillData.bottleType,
+      }));
+    }
+  }, [preFillData]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
