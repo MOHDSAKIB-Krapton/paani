@@ -23,9 +23,9 @@ export function AboutSection() {
           {/* Content */}
           <div className="space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                 Leading{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
                   Water Distribution
                 </span>{" "}
                 Excellence Since 2008
@@ -81,10 +81,10 @@ export function AboutSection() {
               {stats.map((stat, index) => (
                 <Card
                   key={index}
-                  className="group relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
+                  className="group relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl hover:shadow-lg transition-all duration-500 ease-in-out"
                 >
                   <CardContent className="space-y-4 p-6 text-center">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto shadow-md group-hover:scale-105 transition-transform">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary flex items-center justify-center mx-auto shadow-md">
                       <stat.icon className="h-7 w-7 text-white" />
                     </div>
                     <div>

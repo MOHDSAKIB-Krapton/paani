@@ -126,9 +126,44 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    /* @apply border border-red-500; */
+
   }
 
   body {
     @apply bg-background text-foreground;
+    @apply tracking-[0.15em];
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* keeps it clean */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 9999px;
+  /* full round */
+  /* border: 2px solid hsl(var(--background)); */
+  /* gap effect */
+  /* transition: all 0.3s ease; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, hsl(var(--primary) / 0.9), hsl(var(--primary)));
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-color: hsl(var(--primary)) transparent;
 }

@@ -70,9 +70,9 @@ export function ServicesSection() {
       <div className="relative container mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="text-center space-y-6 mb-20">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold">
             Comprehensive{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
               Water Services
             </span>
           </h2>
@@ -88,10 +88,10 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group relative bg-white/5 backdrop-blur-xl border border-white/20 shadow-lg rounded-3xl overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="group relative bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl overflow-hidden transition-all duration-500 ease-in-out hover:shadow-lg"
             >
               <CardHeader className="space-y-5">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary flex items-center justify-center transition-transform duration-300">
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
                 <div>
@@ -115,12 +115,14 @@ export function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  variant="outline"
-                  className="w-full rounded-full border-primary/40 text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white transition-all"
-                >
-                  Learn More
-                </Button>
+                <a href="/distribution" title="Services">
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-full border-primary/40 text-primary hover:bg-gradient-to-r hover:from-primary hover:to-accent hover:text-white transition-all cursor-pointer"
+                  >
+                    Learn More
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}

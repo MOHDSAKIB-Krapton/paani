@@ -18,9 +18,9 @@ export function HeroSection() {
           {/* Content */}
           <div className="space-y-10">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
                 Pure Water <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
                   Distribution Excellence
                 </span>
               </h1>
@@ -32,20 +32,24 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg rounded-full px-8 py-6 text-lg"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                Learn More
-              </Button>
+              <a href="/contact" title="Get Started">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg rounded-full px-8 py-6 text-lg cursor-pointer"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <a href="/distribution" title="Learn More">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-pointer"
+                >
+                  Learn More
+                </Button>
+              </a>
             </div>
 
             {/* Trust Indicators */}

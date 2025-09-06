@@ -1,5 +1,7 @@
 "use client";
 
+import { ALLINFORMATION } from "@/constant";
+import { div } from "framer-motion/client";
 import {
   Droplets,
   Package,
@@ -116,12 +118,12 @@ export default function DistributionPage() {
         {/* How We Distribute (Vertical Steps) */}
         <section className="space-y-12">
           <h2 className="text-3xl font-bold text-center">How We Distribute</h2>
-          <div className="relative max-w-2xl mx-auto">
-            <div className="absolute left-5 top-0 h-full w-0.5 bg-primary/30"></div>
-            <div className="space-y-12">
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute left-7.5 top-0 h-full w-0.5 bg-primary/30"></div>
+            <div className="space-y-24">
               {steps.map((step, i) => (
-                <div key={i} className="relative flex items-start space-x-4">
-                  <div className="z-10 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-background">
+                <div key={i} className="relative flex items-start space-x-4 ">
+                  <div className="z-10 h-16 w-16 flex items-center justify-center bg-primary rounded-full text-background">
                     <step.icon className="h-5 w-5" />
                   </div>
                   <div className="space-y-2">
@@ -139,10 +141,13 @@ export default function DistributionPage() {
           <div className="max-w-6xl mx-auto px-6">
             {/* Section Title */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold tracking-tight">
-                Why <span className="text-primary">Choose AquaFlow</span>
+              <h2 className="text-4xl font-extrabold leading-tight">
+                Why Choose
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
+                  {ALLINFORMATION.WEBSITE_NAME}
+                </span>
               </h2>
-              <div className="mt-4 w-24 h-1 mx-auto bg-gradient-to-r from-primary to-blue-500 rounded-full"></div>
               <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discover the key reasons why businesses, communities, and
                 households trust AquaFlow for reliable water distribution.
@@ -155,13 +160,13 @@ export default function DistributionPage() {
                 <div
                   key={i}
                   className="relative group bg-card/60 backdrop-blur-xl border border-white/10 
-                     rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all 
-                     duration-300 hover:scale-[1.03]"
+                     rounded-2xl p-8 hover:shadow-lg transition-all 
+                     duration-500 ease-in-out"
                 >
                   {/* Icon */}
                   <div
                     className="flex items-center justify-center w-14 h-14 
-                          rounded-full bg-gradient-to-tr from-primary to-blue-500 
+                          rounded-full bg-gradient-to-tr from-primary to-primary 
                           text-background shadow-md mb-6"
                   >
                     <reason.icon className="h-7 w-7" />
@@ -178,12 +183,6 @@ export default function DistributionPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     {reason.desc}
                   </p>
-
-                  {/* Decorative Glow */}
-                  <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 
-                          transition bg-gradient-to-br from-primary to-blue-500 blur-xl"
-                  ></div>
                 </div>
               ))}
             </div>

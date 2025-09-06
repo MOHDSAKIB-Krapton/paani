@@ -2,27 +2,24 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Droplets } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./common/logo";
+import DiscountBanner from "./common/discountBanner";
+import QueryPopup from "./common/queryPopup";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full">
+      <DiscountBanner />
+      <QueryPopup />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/60 backdrop-blur-xl border-b border-white/20" />
 
       <div className="relative container mx-auto px-6 lg:px-12">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="p-2 rounded-full bg-primary/10">
-              <Droplets className="h-7 w-7 text-primary" />
-            </div>
-            <span className="text-2xl font-extrabold tracking-tight text-foreground">
-              AquaFlow
-            </span>
-          </div>
+          <Logo />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
@@ -30,7 +27,7 @@ export function Header() {
               <a
                 key={item}
                 href={`/${item === "Home" ? "" : item.toLowerCase()}`}
-                className="text-sm tracking-[0.15em] uppercase font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-sm tracking-[0.15em] uppercase font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer"
               >
                 {item}
               </a>
@@ -39,9 +36,13 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-2 text-sm shadow-md">
+            <a
+              href="contact"
+              title="Contact"
+              className="rounded-full bg-gradient-to-r from-primary to-primary hover:opacity-90 text-white px-6 py-2 text-sm shadow-md cursor-pointer"
+            >
               Get Quote
-            </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,9 +80,13 @@ export function Header() {
                   {item}
                 </a>
               ))}
-              <Button className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-3 w-full shadow-md">
+              <a
+                href="contact"
+                title="Contact"
+                className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-3 w-full shadow-md"
+              >
                 Get Quote
-              </Button>
+              </a>
             </div>
           </motion.div>
         )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ALLINFORMATION } from "@/constant";
 import { Droplets } from "lucide-react";
 
 export function CTABanner() {
@@ -27,19 +28,23 @@ export function CTABanner() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <Button
-            size="lg"
-            className="bg-background text-primary font-semibold hover:bg-background/90 px-8 py-6"
-          >
-            Get a Free Quote
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-background text-black hover:text-background font-semibold hover:bg-background/10 px-8 py-6"
-          >
-            Call Us Now
-          </Button>
+          <a href="/contact" title="Contact">
+            <Button
+              size="lg"
+              className="bg-background text-primary font-semibold hover:bg-background/90 px-8 py-6 cursor-pointer"
+            >
+              Get a Free Quote
+            </Button>
+          </a>
+          <a href={`tel:${ALLINFORMATION.PHONE_NUMBER}`} title="Call Us Now">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-background text-black hover:text-background font-semibold hover:bg-background/10 px-8 py-6 cursor-pointer"
+            >
+              Call Us Now
+            </Button>
+          </a>
         </div>
       </div>
     </section>

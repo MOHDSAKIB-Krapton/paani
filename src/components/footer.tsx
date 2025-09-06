@@ -1,37 +1,65 @@
 import { Droplets, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import Logo from "./common/logo";
+import { ALLINFORMATION } from "@/constant";
 
 export function Footer() {
+  const SOCIAL_MEDIA = [
+    {
+      name: "Facebook",
+      icon: Facebook,
+      link: ALLINFORMATION.FACEBOOK_LINK,
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      link: ALLINFORMATION.INSTAGRAM_LINK,
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      link: ALLINFORMATION.TWITTER_LINK,
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      link: ALLINFORMATION.LINKEDIN_LINK,
+    },
+  ];
+
   return (
     <footer className="relative bg-gradient-to-br from-foreground via-foreground/95 to-foreground/90 text-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <Droplets className="h-9 w-9 text-primary" />
-              <span className="text-2xl font-extrabold tracking-tight">
-                AquaFlow
-              </span>
-            </div>
+            <Logo theme="dark" />
+
             <p className="text-background/70 text-sm leading-relaxed max-w-xs">
               Delivering safe, sustainable, and high-quality water solutions
               since 2008 — trusted by thousands of vendors and businesses.
             </p>
             <div className="flex space-x-3">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <div
+              {SOCIAL_MEDIA.map((Icon, i) => (
+                <a
                   key={i}
+                  href={Icon.link}
+                  title={Icon.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={Icon.name}
                   className="p-2 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
                 >
-                  <Icon className="h-4 w-4" />
-                </div>
+                  <Icon.icon className="h-4 w-4" />
+                </a>
               ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4 tracking-[0.15em]">
+              Services
+            </h3>
             <ul className="space-y-3 text-sm">
               {[
                 "Residential Supply",
@@ -42,7 +70,7 @@ export function Footer() {
               ].map((service, i) => (
                 <li key={i}>
                   <a
-                    href="#"
+                    href="/distribution"
                     className="text-background/70 hover:text-primary transition-colors"
                   >
                     {service}
@@ -58,10 +86,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "About Us", href: "#about" },
-                { label: "Our Team", href: "#" },
-                { label: "Careers", href: "#" },
-                { label: "News", href: "#" },
-                { label: "Contact", href: "#contact" },
+                { label: "Distribution", href: "/distribution" },
+                { label: "Contact", href: "/contact" },
               ].map((link, i) => (
                 <li key={i}>
                   <a
@@ -87,28 +113,31 @@ export function Footer() {
               <p>
                 Phone:{" "}
                 <a
-                  href="tel:5551234567"
+                  href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}
+                  title="Call us"
                   className="hover:text-primary transition-colors"
                 >
-                  (555) 123-4567
+                  {ALLINFORMATION.PHONE_NUMBER}
                 </a>
               </p>
               <p>
                 Emergency:{" "}
                 <a
-                  href="tel:5559876543"
+                  href={`tel:${ALLINFORMATION.EMERGENCY_NUMBER}`}
+                  title="Call emergency number"
                   className="hover:text-primary transition-colors"
                 >
-                  (555) 987-6543
+                  {ALLINFORMATION.EMERGENCY_NUMBER}
                 </a>
               </p>
               <p>
                 Email:{" "}
                 <a
-                  href="mailto:info@aquaflow.com"
+                  href={`mailto:${ALLINFORMATION.EMAIL}`}
+                  title="Email us"
                   className="hover:text-primary transition-colors"
                 >
-                  info@aquaflow.com
+                  {ALLINFORMATION.EMAIL}
                 </a>
               </p>
             </div>
@@ -119,10 +148,10 @@ export function Footer() {
         <div className="border-t border-background/20 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-background/60">
           <p>© 2024 AquaFlow Water Distribution. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="/legal" className="hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="/legal" className="hover:text-primary transition-colors">
               Terms of Service
             </a>
           </div>

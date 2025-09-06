@@ -1,36 +1,67 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ALLINFORMATION } from "@/constant";
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const CONTACT_INFO = [
+    {
+      icon: MapPin,
+      title: "Location",
+      content: (
+        <>
+          {ALLINFORMATION.ADDRESS.split("<br />").map((line, i) => (
+            <span key={i}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </>
+      ),
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      content: (
+        <>
+          Main:{" "}
+          <a
+            href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}
+            className="text-primary font-semibold hover:underline"
+          >
+            {ALLINFORMATION.PHONE_NUMBER}
+          </a>
+          <br />
+          Emergency:{" "}
+          <a
+            href={`tel:${ALLINFORMATION.EMERGENCY_NUMBER}`}
+            className="text-primary font-semibold hover:underline"
+          >
+            {ALLINFORMATION.EMERGENCY_NUMBER}
+          </a>
+        </>
+      ),
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: (
+        <a
+          href={`mailto:${ALLINFORMATION.EMAIL}`}
+          className="text-primary font-semibold hover:underline"
+        >
+          {ALLINFORMATION.EMAIL}
+        </a>
+      ),
+    },
+    {
+      icon: Clock,
+      title: "Hours",
+      content: <>{ALLINFORMATION.OPENING_HOURS}</>,
+    },
+  ];
 
   return (
     <section
@@ -41,183 +72,68 @@ export function ContactSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-primary/5 blur-3xl opacity-50 pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
+          <h2 className="text-3xl md:text-5xl font-bold">Get in Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your water distribution service? Contact us today for
-            a personalized quote and consultation.
+            We’re here to keep you hydrated. Reach out to us anytime for quick
+            support, custom quotes, or bulk water distribution solutions.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {[
-              {
-                icon: MapPin,
-                title: "Location",
-                content: (
-                  <>
-                    123 Water Distribution Blvd
-                    <br /> Suite 100 <br /> City, State 12345
-                  </>
-                ),
-              },
-              {
-                icon: Phone,
-                title: "Phone",
-                content: (
-                  <>
-                    Main: (555) 123-4567
-                    <br /> Emergency: (555) 987-6543
-                  </>
-                ),
-              },
-              {
-                icon: Mail,
-                title: "Email",
-                content: (
-                  <>
-                    info@aquaflow.com
-                    <br /> support@aquaflow.com
-                  </>
-                ),
-              },
-              {
-                icon: Clock,
-                title: "Hours",
-                content: (
-                  <>
-                    Mon–Fri: 7:00 AM – 7:00 PM
-                    <br /> Sat–Sun: 8:00 AM – 5:00 PM
-                    <br /> Emergency: 24/7
-                  </>
-                ),
-              },
-            ].map((item, i) => (
-              <Card
-                key={i}
-                className="border border-border/40 backdrop-blur-xl bg-card/80 shadow-md hover:shadow-xl transition-all"
-              >
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <item.icon className="h-5 w-5 text-primary" />
-                    <span>{item.title}</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.content}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border border-border/40 backdrop-blur-xl bg-card/80 shadow-lg">
+        {/* Contact Info in Grid */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16 max-w-7xl mx-auto">
+          {CONTACT_INFO.map((item, i) => (
+            <Card
+              key={i}
+              className="border border-border/40 backdrop-blur-xl bg-card/80 shadow-md hover:shadow-xl transition-all"
+            >
               <CardHeader>
-                <CardTitle>Send us a Message</CardTitle>
+                <CardTitle className="flex items-center space-x-2">
+                  <item.icon className="h-5 w-5 text-primary" />
+                  <span>{item.title}</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Full Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="border-border focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email Address *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="border-border focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium">
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="border-border focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="service" className="text-sm font-medium">
-                        Service Needed
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border border-border rounded-md bg-input focus:outline-none focus:ring-2 focus:ring-primary"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="residential">Residential Supply</option>
-                        <option value="commercial">Commercial Solutions</option>
-                        <option value="industrial">
-                          Industrial Distribution
-                        </option>
-                        <option value="emergency">Emergency Delivery</option>
-                        <option value="maintenance">
-                          Installation & Maintenance
-                        </option>
-                        <option value="consultation">
-                          Consultation Services
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Message *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="border-border focus:ring-2 focus:ring-primary"
-                      placeholder="Tell us about your water distribution needs..."
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg transition-all"
-                  >
-                    Send Message
-                  </Button>
-                </form>
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.content}
+                </p>
               </CardContent>
             </Card>
-          </div>
+          ))}
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+          <a href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}>
+            <Button
+              size="lg"
+              className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
+            >
+              Call Us Now
+            </Button>
+          </a>
+          <a href={`mailto:${ALLINFORMATION.EMAIL}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
+            >
+              Send an Email
+            </Button>
+          </a>
+        </div>
+
+        {/* Map Section */}
+        <div className="w-[60%] mx-auto rounded-4xl p-1 bg-white h-[400px] overflow-hidden shadow-lg">
+          <iframe
+            src={`https://www.google.com/maps?q=${ALLINFORMATION.LAT},${ALLINFORMATION.LNG}&hl=es;z=14&output=embed`}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </section>
