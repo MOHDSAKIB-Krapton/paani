@@ -105,11 +105,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3 text-sm text-background/70">
-              <p>
-                123 Water Distribution Blvd <br />
-                Suite 100 <br />
-                City, State 12345
-              </p>
+              <p>{ALLINFORMATION.ADDRESS}</p>
               <p>
                 Phone:{" "}
                 <a

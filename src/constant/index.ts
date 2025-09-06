@@ -1,5 +1,5 @@
 export const ALLINFORMATION = {
-  OWNER_NAME: "Purelay Water Solutions",
+  OWNER_NAME: "Purelay Water",
   WEBSITE_NAME: "PurelayWater",
 
   // DEVELOPER INFO
@@ -7,9 +7,9 @@ export const ALLINFORMATION = {
   DEVELOPED_BY_LINK: "https://mohdsakib.vercel.app",
 
   // CONTACT DETAILS
-  PHONE_NUMBER: "+1234567890",
-  EMERGENCY_NUMBER: "+0987654321",
-  EMAIL: "info@purelaywater.com",
+  PHONE_NUMBER: "+918449904598",
+  EMERGENCY_NUMBER: "+918171904598",
+  EMAIL: "purelaywater@gmail.com",
 
   // SOCIAL MEDIA LINKS
   FACEBOOK_LINK: "https://www.facebook.com/purelaywater",
@@ -19,7 +19,11 @@ export const ALLINFORMATION = {
   OPENING_HOURS: "Open 24 hours, 7 days a week",
 
   // ADDRESS DETAILS
-  LAT: "28.6139", // Example: Latitude for New Delhi
-  LNG: "77.2090", // Example: Longitude for New Delhi
-  ADDRESS: "123 Water St, Hydration City, HC 45678",
+  LAT: "28.770610",
+  LNG: "77.504980",
+  ADDRESS: "Aadarsh Colony, Muradnagar Ghaziabad, Uttar Pradesh 201206",
+
+  URL: "https://purelaywater.com/",
 };
+
+export const HOST = "https://purelaywater.com";

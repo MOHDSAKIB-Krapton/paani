@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ALLINFORMATION } from "@/constant";
+import InquiryForm from "./common/inquirey-form";
 
 export function ContactSection() {
   const CONTACT_INFO = [
@@ -102,6 +103,12 @@ export function ContactSection() {
             </Card>
           ))}
         </div>
+
+        <InquiryForm
+          variant="section"
+          title="Inquire About Our Products"
+          description="Fill out the form below to receive more information."
+        />
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
