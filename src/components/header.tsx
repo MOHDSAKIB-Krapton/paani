@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./common/logo";
 import DiscountBanner from "./common/discountBanner";
 import QueryPopup from "./common/queryPopup";
+import CircularText from "./CircularText";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,13 +36,20 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
+            {/* <a
               href="contact"
               title="Contact"
               className="rounded-full bg-gradient-to-r from-primary to-primary hover:opacity-90 text-white px-6 py-2 text-sm shadow-md cursor-pointer"
             >
               Get Quote
-            </a>
+            </a> */}
+
+            <CircularText
+              text="PURELAY*WATER*"
+              onHover="speedUp"
+              spinDuration={20}
+              className="custom-class"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,13 +85,6 @@ export function Header() {
                   {item}
                 </a>
               ))}
-              <a
-                href="contact"
-                title="Contact"
-                className="rounded-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white px-6 py-3 w-full shadow-md"
-              >
-                Get Quote
-              </a>
             </div>
           </motion.div>
         )}

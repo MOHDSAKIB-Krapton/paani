@@ -8,6 +8,7 @@ import { CTABanner } from "@/components/cta-banner";
 import WaterOrderBanner from "@/components/water-order-banner";
 import InquiryForm from "@/components/common/inquirey-form";
 import { useRef, useState } from "react";
+import { WhyPurelayWater } from "@/components/why-us";
 
 export default function HomePage() {
   const formRef = useRef<HTMLDivElement>(null);
@@ -25,7 +26,6 @@ export default function HomePage() {
     <main className="min-h-screen">
       <HeroSection />
       <WaterOrderBanner onOrderNow={handleOrderNow} />
-
       <div ref={formRef}>
         <InquiryForm
           variant="section"
@@ -34,6 +34,7 @@ export default function HomePage() {
           preFillData={preFillData}
         />
       </div>
+      <WhyPurelayWater />
       <ServicesSection />
       <AboutSection />
       <CTABanner />

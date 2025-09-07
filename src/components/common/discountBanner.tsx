@@ -8,7 +8,7 @@ export default function DiscountBanner() {
 
   return (
     <div
-      className={`relative z-[60] bg-yellow-400 text-black text-sm font-medium px-4 py-2 flex items-center justify-center transition-all duration-500 ${
+      className={`relative z-[60] bg-black text-white text-sm font-medium px-4 py-2 flex items-center justify-center transition-all duration-500 ${
         visible ? "opacity-100 max-h-20" : "opacity-0 max-h-0 overflow-hidden"
       }`}
     >

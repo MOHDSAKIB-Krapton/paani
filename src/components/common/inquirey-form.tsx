@@ -44,6 +44,7 @@ const InquiryForm = ({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     address: "",
     city: "",
     state: "",
@@ -103,6 +104,7 @@ const InquiryForm = ({
       setFormData({
         name: "",
         email: "",
+        phone: "",
         address: "",
         city: "",
         state: "",
@@ -140,6 +142,18 @@ const InquiryForm = ({
             className="mt-1"
           />
         </div>
+      </div>
+      <div>
+        <Label htmlFor="phone">Phone Number *</Label>
+        <Input
+          id="phone"
+          name="phone"
+          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          className="mt-1"
+        />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1">

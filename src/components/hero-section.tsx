@@ -17,7 +17,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="space-y-10">
-            <div className="space-y-6">
+            <div className="space-y-6 text-center lg:text-start">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
                 Pure Water <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
@@ -71,24 +71,12 @@ export function HeroSection() {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-accent/10">
+            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
               <img
-                src="../images/modern-water-distribution-facility-with-clean-pipe.jpg"
+                src="../images/bottle.webp"
                 alt="Water distribution facility"
-                className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
+                className="w-full h-full object-cover"
               />
-            </div>
-
-            {/* Floating Stats */}
-            <div className="absolute -bottom-10 -left-10 backdrop-blur-xl bg-white/30 border border-white/40 rounded-2xl p-6 shadow-xl">
-              <div className="text-3xl font-bold text-primary">10K+</div>
-              <div className="text-sm text-muted-foreground">
-                Happy Customers
-              </div>
-            </div>
-            <div className="absolute -top-10 -right-10 backdrop-blur-xl bg-white/30 border border-white/40 rounded-2xl p-6 shadow-xl">
-              <div className="text-3xl font-bold text-primary">99.9%</div>
-              <div className="text-sm text-muted-foreground">Uptime</div>
             </div>
           </div>
         </div>

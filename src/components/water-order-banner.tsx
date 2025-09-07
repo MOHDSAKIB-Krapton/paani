@@ -16,19 +16,19 @@ export default function WaterOrderBanner({
       size: "200ml",
       quantity: 24,
       price: "₹150",
-      imageUrl: "/images/cloud.jpg",
+      imageUrl: "/images/200x20.webp",
     },
     {
       size: "500ml",
       quantity: 24,
       price: "₹250",
-      imageUrl: "/images/cloud.jpg",
+      imageUrl: "/images/500x20.webp",
     },
     {
       size: "1L",
       quantity: 12,
       price: "₹300",
-      imageUrl: "/images/cloud.jpg",
+      imageUrl: "/images/1000x20.webp",
     },
   ];
 

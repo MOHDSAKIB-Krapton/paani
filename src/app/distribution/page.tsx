@@ -72,9 +72,9 @@ export default function DistributionPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group relative overflow-hidden rounded-2xl border bg-card shadow-md hover:shadow-xl transition">
               <img
-                src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=800"
+                src="./images/bottle.webp"
                 alt="Bottled Water"
-                className="h-48 w-full object-cover group-hover:scale-105 transition-transform"
+                className="h-48 w-full object-contain group-hover:scale-105 transition-transform"
               />
               <div className="p-6 space-y-2">
                 <h3 className="font-semibold text-xl">Bottled Water</h3>
@@ -86,9 +86,9 @@ export default function DistributionPage() {
             </div>
             <div className="group relative overflow-hidden rounded-2xl border bg-card shadow-md hover:shadow-xl transition">
               <img
-                src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?w=800"
+                src="./images/200x20.webp"
                 alt="Bulk Supply"
-                className="h-48 w-full object-cover group-hover:scale-105 transition-transform"
+                className="h-64 w-full object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-6 space-y-2">
                 <h3 className="font-semibold text-xl">Bulk Supply</h3>
@@ -99,11 +99,16 @@ export default function DistributionPage() {
               </div>
             </div>
             <div className="group relative overflow-hidden rounded-2xl border bg-card shadow-md hover:shadow-xl transition">
-              <img
+              {/* <img
                 src="https://images.unsplash.com/photo-1621570168788-46c96a3cbd49?w=800"
                 alt="Custom Orders"
                 className="h-48 w-full object-cover group-hover:scale-105 transition-transform"
-              />
+              /> */}
+
+              <div className="h-48 flex items-center justify-center">
+                <p className="text-black">Order of your Choice.</p>
+              </div>
+
               <div className="p-6 space-y-2">
                 <h3 className="font-semibold text-xl">Custom Orders</h3>
                 <p className="text-muted-foreground">

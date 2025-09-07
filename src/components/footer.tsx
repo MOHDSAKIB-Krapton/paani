@@ -32,7 +32,10 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Info */}
           <div className="space-y-6">
-            <Logo theme="dark" />
+            {/* <Logo theme="dark" /> */}
+            <h4 className={`text-2xl font-extrabold text-background mb-8`}>
+              {ALLINFORMATION.WEBSITE_NAME}
+            </h4>
 
             <p className="text-background/70 text-sm leading-relaxed max-w-xs">
               Delivering safe, sustainable, and high-quality water solutions
