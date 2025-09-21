@@ -25,9 +25,12 @@ export function HeroSection() {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-                Premium water solutions designed for modern homes and
+                {/* Premium water solutions designed for modern homes and
                 businesses. Reliable, sustainable, and delivered with unmatched
-                service quality.
+                service quality. */}
+                Customized Water Bottle Labels for Hotels, Cafes, restaurant,
+                weddings, event, Business etc. <br /> ✨purelay &rarr; purity in
+                every drop♥️
               </p>
             </div>
 
