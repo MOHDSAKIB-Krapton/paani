@@ -39,7 +39,7 @@ export function Footer() {
 
             <p className="text-background/70 text-sm leading-relaxed max-w-xs">
               Delivering safe, sustainable, and high-quality water solutions
-              since 2008 — trusted by thousands of vendors and businesses.
+              since 2025 — trusted by thousands of vendors and businesses.
             </p>
             <div className="flex space-x-3">
               {SOCIAL_MEDIA.map((Icon, i) => (
@@ -145,7 +145,7 @@ export function Footer() {
 
         {/* Bottom Row */}
         <div className="border-t border-background/20 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-background/60">
-          <p>© 2024 AquaFlow Water Distribution. All rights reserved.</p>
+          <p>© 2024 Purelay Water Distribution. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
             <a href="/legal" className="hover:text-primary transition-colors">
               Privacy Policy

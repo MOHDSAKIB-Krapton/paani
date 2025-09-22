@@ -61,8 +61,8 @@ export default function DistributionPage() {
             Our Distribution Network
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            AquaFlow delivers safe, sustainable, and affordable water solutions
-            — from production to your business.
+            Purelay delivers safe, sustainable, and affordable water solutions —
+            from production to your business.
           </p>
         </section>
 
@@ -147,7 +147,7 @@ export default function DistributionPage() {
           </div>
         </section>
 
-        {/* Why Choose AquaFlow */}
+        {/* Why Choose Purelay */}
         <section className="relative py-20 bg-gradient-to-b from-background to-muted rounded-xl">
           <div className="max-w-6xl mx-auto px-6">
             {/* Section Title */}
@@ -161,7 +161,7 @@ export default function DistributionPage() {
               </h2>
               <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Discover the key reasons why businesses, communities, and
-                households trust AquaFlow for reliable water distribution.
+                households trust Purelay for reliable water distribution.
               </p>
             </div>
 

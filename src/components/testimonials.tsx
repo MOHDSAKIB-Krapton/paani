@@ -8,19 +8,19 @@ const testimonials = [
     name: "Rahul Mehta",
     role: "Homeowner",
     feedback:
-      "AquaFlow is super reliable! The delivery is always on time, and the water quality is crystal clear. Couldn’t ask for better service.",
+      "Purelay is super reliable! The delivery is always on time, and the water quality is crystal clear. Couldn’t ask for better service.",
   },
   {
     name: "Priya Sharma",
     role: "Restaurant Owner",
     feedback:
-      "We’ve been using AquaFlow for our restaurant for over 5 years. Bulk deliveries are hassle-free, and the team is very supportive.",
+      "We’ve been using Purelay for our restaurant for over 5 years. Bulk deliveries are hassle-free, and the team is very supportive.",
   },
   {
     name: "Amit Verma",
     role: "Factory Manager",
     feedback:
-      "Handling high-volume supply is not easy, but AquaFlow makes it seamless. Their compliance and safety standards are top-notch.",
+      "Handling high-volume supply is not easy, but Purelay makes it seamless. Their compliance and safety standards are top-notch.",
   },
 ];
 

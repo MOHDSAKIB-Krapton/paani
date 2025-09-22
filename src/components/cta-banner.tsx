@@ -22,7 +22,7 @@ export function CTABanner() {
 
         {/* Subtext */}
         <p className="max-w-2xl mx-auto text-lg text-primary-foreground/90">
-          Partner with AquaFlow today and ensure consistent, sustainable, and
+          Partner with Purelay today and ensure consistent, sustainable, and
           high-quality water delivery for your home, business, or industry.
         </p>
 

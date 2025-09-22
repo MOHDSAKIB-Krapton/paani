@@ -16,7 +16,7 @@ export default function LegalPage() {
           Privacy Policy
         </h2>
         <p className="mb-4">
-          At AquaFlow Water Distribution (&quot;Company&quot;, &quot;we&quot;,
+          At Purelay Water Distribution (&quot;Company&quot;, &quot;we&quot;,
           &quot;our&quot;, &quot;us&quot;), we value your trust and are
           committed to safeguarding the privacy of your personal information.
           This Privacy Policy outlines how we collect, use, disclose, and
@@ -117,7 +117,7 @@ export default function LegalPage() {
           Terms of Service
         </h2>
         <p className="mb-4">
-          By accessing or using AquaFlow Water Distribution services, you agree
+          By accessing or using Purelay Water Distribution services, you agree
           to the following Terms of Service. If you do not agree, please do not
           use our services.
         </p>
@@ -127,7 +127,7 @@ export default function LegalPage() {
         </h3>
         <p>
           You must be at least 18 years old to create an account and purchase
-          from AquaFlow. By using our services, you confirm that you meet these
+          from Purelay. By using our services, you confirm that you meet these
           requirements.
         </p>
 
@@ -192,7 +192,7 @@ export default function LegalPage() {
           6. Limitation of Liability
         </h3>
         <p>
-          AquaFlow will not be liable for indirect, incidental, or consequential
+          Purelay will not be liable for indirect, incidental, or consequential
           damages arising from the use of our services, beyond the value of the
           product purchased.
         </p>

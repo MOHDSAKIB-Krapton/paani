@@ -28,10 +28,10 @@ export function AboutSection() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
                   Water Distribution
                 </span>{" "}
-                Excellence Since 2008
+                Excellence Since 2025
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-                AquaFlow has been at the forefront of water distribution,
+                Purelay has been at the forefront of water distribution,
                 delivering reliable, sustainable, and premium-quality solutions
                 to communities and businesses across the region.
               </p>
@@ -71,7 +71,7 @@ export function AboutSection() {
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl ring-1 ring-white/20">
               <img
                 src="../images/professional-water-distribution-team-working-with-.jpg"
-                alt="AquaFlow team and facilities"
+                alt="Purelay team and facilities"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>

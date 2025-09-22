@@ -20,7 +20,7 @@ export function Header() {
               <Droplets className="h-7 w-7 text-primary" />
             </div>
             <span className="text-2xl font-extrabold tracking-tight text-foreground">
-              AquaFlow
+              Purelay
             </span>
           </div>
 
