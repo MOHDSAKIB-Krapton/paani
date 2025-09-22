@@ -7,6 +7,7 @@ import Logo from "./common/logo";
 import DiscountBanner from "./common/discountBanner";
 import QueryPopup from "./common/queryPopup";
 import CircularText from "./CircularText";
+import FloatingContact from "./floating-contact";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <DiscountBanner />
+      <FloatingContact />
       <QueryPopup />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-background/60 backdrop-blur-xl border-b border-white/20" />
 
