@@ -48,9 +48,9 @@ export function WhyPurelayWater() {
           >
             <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
               <img
-                src="/images/bottle.webp"
+                src="/images/bottle.jpg"
                 alt="Purelay premium water"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
             </div>

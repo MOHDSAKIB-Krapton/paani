@@ -74,11 +74,11 @@ export function HeroSection() {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
+            <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-white">
               <img
-                src="../images/bottle.webp"
+                src="../images/bottle.jpg"
                 alt="Water distribution facility"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
