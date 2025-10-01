@@ -74,6 +74,7 @@ export function Footer() {
                 <li key={i}>
                   <a
                     href="/distribution"
+                    title="Distribution"
                     className="text-background/70 hover:text-primary transition-colors"
                   >
                     {service}
@@ -95,6 +96,7 @@ export function Footer() {
                 <li key={i}>
                   <a
                     href={link.href}
+                    title={link.label}
                     className="text-background/70 hover:text-primary transition-colors"
                   >
                     {link.label}

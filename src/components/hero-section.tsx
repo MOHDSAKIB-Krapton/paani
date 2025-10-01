@@ -19,18 +19,19 @@ export function HeroSection() {
           <div className="space-y-10">
             <div className="space-y-6 text-center lg:text-start">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-                Pure Water <br />
+                {/* Pure Water <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
                   Distribution Excellence
-                </span>
+                </span> */}
+                Welcome to Purelay Water
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-                {/* Premium water solutions designed for modern homes and
-                businesses. Reliable, sustainable, and delivered with unmatched
-                service quality. */}
-                Customized Water Bottle Labels for Hotels, Cafes, restaurant,
+                {/* Customized Water Bottle Labels for Hotels, Cafes, restaurant,
                 weddings, event, Business etc. <br /> ✨purelay &rarr; purity in
-                every drop♥️
+                every drop♥️ */}
+                We help you create custom-branded water bottles designed for
+                hotels, restaurants, cafés, and events. Every sip reflects your
+                brand's identity with elegance and trust.
               </p>
             </div>
 

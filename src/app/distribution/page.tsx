@@ -86,7 +86,7 @@ export default function DistributionPage() {
             </div>
             <div className="group relative overflow-hidden rounded-2xl border bg-card shadow-md hover:shadow-xl transition">
               <img
-                src="./images/200x20.webp"
+                src="./images/200x24.webp"
                 alt="Bulk Supply"
                 className="h-64 w-full object-cover group-hover:scale-105 transition-transform"
               />

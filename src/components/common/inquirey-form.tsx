@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { ALLINFORMATION } from "@/constant";
 
 const lineOfWorkOptions = [
   "Retailers",
@@ -295,6 +296,27 @@ const InquiryForm = ({
           <p className="text-gray-500 dark:text-gray-400 text-sm">
             We respect your privacy. Your information will never be shared.
           </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+            <a href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}>
+              <Button
+                size="lg"
+                className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
+              >
+                Call Us Now
+              </Button>
+            </a>
+            <a href={`mailto:${ALLINFORMATION.EMAIL}`}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
+              >
+                Send an Email
+              </Button>
+            </a>
+          </div>
         </div>
 
         {formContent}

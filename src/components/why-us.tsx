@@ -8,36 +8,47 @@ export function WhyPurelayWater() {
   const features = [
     {
       icon: Shield,
-      title: "Certified Purity",
+      title: "Premium Mineral Water",
       description:
-        "Every drop undergoes multi-stage purification and rigorous testing to ensure unmatched quality.",
+        "Sourced from natural springs and enriched with essential minerals, Purelay Water ensures superior taste, hydration, and wellness benefits with every bottle.",
     },
     {
       icon: Droplets,
-      title: "Balanced Minerals",
+      title: "Safe & Hygienic Bottled Water",
       description:
-        "Engineered with the right mineral blend for better hydration, health, and taste.",
+        "Every bottle undergoes strict purification, multi-stage filtration, and quality testing to guarantee 100% safe, contaminant-free drinking water for families and businesses.",
     },
     {
       icon: Leaf,
-      title: "Eco-Smart Delivery",
+      title: "Customizable Branded Bottles",
       description:
-        "Sustainable packaging and optimized routes reduce waste while keeping water fresh.",
+        "Elevate your corporate events, hospitality services, or product launches with eco-friendly bottles featuring your logo or personalized labels for professional presentation.",
     },
     {
       icon: Globe,
-      title: "Trusted by Families & Businesses",
+      title: "Bulk Mineral Water at Affordable Prices",
       description:
-        "Purelay powers homes, offices, and industries with reliable water distribution excellence.",
+        "Whether for offices, restaurants, or large-scale events, Purelay Water delivers premium-quality mineral water in bulk, combining cost efficiency with exceptional taste and purity.",
     },
   ];
 
   return (
     <section
       id="why-purelay"
-      className="relative py-20 bg-gradient-to-br from-background via-card to-background overflow-hidden"
+      className="relative py-24 bg-gradient-to-br from-background via-card to-background overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 space-y-20">
+        <div className="flex flex-col flex-1 text-center items-center justify-center gap-y-5">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Why Purelay?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+            Discover <strong>Purelay Water</strong>, the top choice for clean,
+            safe, and naturally mineral-rich water. Perfect for homes, offices,
+            events, and businesses seeking reliable hydration, hygiene, and
+            eco-conscious delivery.
+          </p>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <motion.div
@@ -63,17 +74,6 @@ export function WhyPurelayWater() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="space-y-8 order-1 lg:order-2"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Why <span className="text-primary">Purelay Water?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Purelay Water is more than hydration—it's{" "}
-              <strong>
-                certified purity, balanced minerals, and sustainable delivery
-              </strong>
-              , designed for modern lifestyles.
-            </p>
-
             <ul className="space-y-6">
               {features.map(({ icon: Icon, title, description }, idx) => (
                 <motion.li
@@ -84,7 +84,7 @@ export function WhyPurelayWater() {
                   className="flex items-start gap-4"
                 >
                   <Icon className="h-6 w-6 text-primary mt-1" />
-                  <div>
+                  <div className="flex flex-col flex-1">
                     <h3 className="text-xl font-semibold">{title}</h3>
                     <p className="text-base text-muted-foreground">
                       {description}
@@ -95,7 +95,11 @@ export function WhyPurelayWater() {
             </ul>
 
             <div className="pt-6">
-              <a href="/about" aria-label="Learn more about Purelay Water">
+              <a
+                href="/about"
+                aria-label="Learn more about Purelay Water"
+                title="About"
+              >
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-10 py-5 shadow-lg transition-all hover:scale-105"

@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { HOST } from "@/constant";
 import { Toaster } from "@/components/ui/sonner";
+import ReactLenis from "lenis/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,16 +18,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(HOST),
   title: {
     template: "%s | PureLayWater",
-    default: "PureLayWater - Fresh & Reliable Water Distribution",
+    default: "PureLayWater - Customized Water Distribution",
   },
   description:
-    "PureLayWater delivers fresh, clean, and reliable water to your home, office, or industry. We provide 24/7 supply, emergency delivery, and customized water solutions you can trust.",
+    "PureLayWater delivers fresh, clean, and reliable water to your home, office, or industry. We provide customized water solutions you can trust, 24/7 supply, and emergency delivery.",
   keywords: [
     "PureLayWater",
     "Water delivery",
     "Water distribution",
+    "Custom water bottle label",
     "Clean water",
     "Fresh water",
     "24/7 water supply",
@@ -40,9 +43,9 @@ export const metadata: Metadata = {
     canonical: HOST,
   },
   openGraph: {
-    title: "PureLayWater - Fresh & Reliable Water Distribution",
+    title: "PureLayWater - Customized Water Distribution",
     description:
-      "Get fresh, safe, and clean water delivered straight to your doorstep. PureLayWater provides 24/7 water distribution services for residential, commercial, and industrial needs.",
+      "PureLayWater delivers fresh, clean, and reliable water to your home, office, or industry. We provide customized water solutions you can trust, 24/7 supply, and emergency delivery.",
     url: HOST,
     siteName: "PureLayWater",
     images: [{ url: `${HOST}/images/og-image.png` }],
@@ -51,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PureLayWater",
+    title: "PureLayWater - Customized Water Distribution",
     description:
-      "PureLayWater provides 24/7 clean and reliable water distribution for homes, offices, and industries.",
+      "PureLayWater delivers fresh, clean, and reliable water to your home, office, or industry. We provide customized water solutions you can trust, 24/7 supply, and emergency delivery.",
     images: [`${HOST}/images/twitter-image.png`],
   },
   robots: {
@@ -78,10 +81,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Toaster />
-        <Footer />
+        <ReactLenis root>
+          <Header />
+          {children}
+          <Toaster />
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );

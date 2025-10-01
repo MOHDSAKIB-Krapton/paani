@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Card,
   CardContent,
@@ -13,49 +11,47 @@ import { Home, Building2, Factory, Truck, Wrench, Phone } from "lucide-react";
 const services = [
   {
     icon: Home,
-    title: "Residential Supply",
+    title: "Custom Branding",
     description:
-      "Reliable water delivery for homes and apartments with flexible scheduling and premium quality assurance.",
-    features: ["Daily/Weekly delivery", "Quality testing", "Emergency service"],
+      "Personalize every bottle with your logo, tagline, and unique design. Ideal for businesses and events that demand a professional, premium touch while boosting brand visibility.",
+    features: [
+      "Custom logos and taglines on bottles",
+      "Tailored designs for events and promotions",
+      "Premium quality water presentation",
+    ],
   },
   {
     icon: Building2,
-    title: "Commercial Solutions",
+    title: "Events & Corporate",
     description:
-      "Comprehensive water distribution for offices, restaurants, and retail establishments.",
-    features: ["Bulk delivery", "Custom contracts", "Priority support"],
+      "Perfect for weddings, parties, conferences, and corporate seminars. Deliver safe, high-quality, branded water that elevates guest experience and reinforces event identity.",
+    features: [
+      "Branded water for weddings, parties, and corporate events",
+      "Safe, mineral-rich bottled water",
+      "Enhances guest experience with premium presentation",
+    ],
   },
   {
     icon: Factory,
-    title: "Industrial Distribution",
+    title: "Hotels & Restaurants",
     description:
-      "Large-scale water supply for manufacturing and industrial facilities with specialized requirements.",
+      "Enhance hospitality with signature branded bottles. Impress guests with hygienic, mineral-rich water that complements your premium service standards.",
     features: [
-      "High-volume supply",
-      "Technical support",
-      "Compliance monitoring",
+      "Signature branded bottles for guests",
+      "Maintains hygiene and freshness",
+      "Elevates overall guest satisfaction",
     ],
   },
   {
     icon: Truck,
-    title: "Emergency Delivery",
+    title: "Retail Solutions",
     description:
-      "24/7 emergency water supply services for urgent situations and disaster response.",
-    features: ["Rapid response", "24/7 availability", "Crisis management"],
-  },
-  {
-    icon: Wrench,
-    title: "Installation & Maintenance",
-    description:
-      "Professional installation and ongoing maintenance of water distribution systems.",
-    features: ["Expert installation", "Regular maintenance", "System upgrades"],
-  },
-  {
-    icon: Phone,
-    title: "Consultation Services",
-    description:
-      "Expert consultation for water distribution planning and system optimization.",
-    features: ["System analysis", "Efficiency planning", "Cost optimization"],
+      "Boost visibility and brand recognition with cost-effective, personalized packaging. Perfect for retail stores, supermarkets, and corporate gifting, combining quality with marketing impact.",
+    features: [
+      "Cost-effective personalized packaging",
+      "Enhances brand visibility and recall",
+      "Ideal for retail stores and gifting",
+    ],
   },
 ];
 
@@ -70,16 +66,11 @@ export function ServicesSection() {
       <div className="relative container mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="text-center space-y-6 mb-20">
-          <h2 className="text-4xl md:text-5xl font-extrabold">
-            Comprehensive{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary">
-              Water Services
-            </span>
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold">Our Services</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            From residential delivery to industrial solutions, we ensure
-            dependable, high-quality water distribution tailored to every
-            environment.
+            From homes and offices to industrial facilities, Purelay Water
+            delivers reliable, safe, and premium-quality water solutions
+            customized for every environment.
           </p>
         </div>
 

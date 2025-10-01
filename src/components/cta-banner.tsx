@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { ALLINFORMATION } from "@/constant";
 import { Droplets } from "lucide-react";

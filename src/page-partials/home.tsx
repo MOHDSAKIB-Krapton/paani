@@ -1,42 +1,33 @@
-"use client";
-
 import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { AboutSection } from "@/components/about-section";
-import { TestimonialsSection } from "@/components/testimonials";
 import { CTABanner } from "@/components/cta-banner";
-import WaterOrderBanner from "@/components/water-order-banner";
-import InquiryForm from "@/components/common/inquirey-form";
-import { useRef, useState } from "react";
 import { WhyPurelayWater } from "@/components/why-us";
+import dynamic from "next/dynamic";
+import WaterOrderBannerClient from "@/components/water-order-client";
+
+const FeaturesSection = dynamic(() => import("@/components/features"), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />,
+});
+
+const TestimonialsSection = dynamic(() => import("@/components/testimonials"), {
+  loading: () => <div className="h-48 animate-pulse bg-gray-100" />,
+});
+
+const BenefitsSection = dynamic(() => import("@/components/benifits"), {
+  loading: () => <div className="h-48 animate-pulse bg-gray-100" />,
+});
 
 export default function HomePage() {
-  const formRef = useRef<HTMLDivElement>(null);
-  const [preFillData, setPreFillData] = useState({
-    quantity: "1L",
-    bottleType: "Purelay",
-  });
-
-  const handleOrderNow = (quantity: string, bottleType: string = "Purelay") => {
-    setPreFillData({ quantity, bottleType });
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <WaterOrderBanner onOrderNow={handleOrderNow} />
-      <div ref={formRef}>
-        <InquiryForm
-          variant="section"
-          title="Inquire About Our Products"
-          description="Fill out the form below to receive more information."
-          preFillData={preFillData}
-        />
-      </div>
+      <WaterOrderBannerClient />
       <WhyPurelayWater />
       <ServicesSection />
+      <BenefitsSection />
       <AboutSection />
+      <FeaturesSection />
       <CTABanner />
       <TestimonialsSection />
     </main>

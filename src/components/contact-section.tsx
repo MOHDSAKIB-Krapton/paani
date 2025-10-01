@@ -1,8 +1,5 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ALLINFORMATION } from "@/constant";
 import InquiryForm from "./common/inquirey-form";
 
@@ -109,27 +106,6 @@ export function ContactSection() {
           title="Inquire About Our Products"
           description="Fill out the form below to receive more information."
         />
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-          <a href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}>
-            <Button
-              size="lg"
-              className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
-            >
-              Call Us Now
-            </Button>
-          </a>
-          <a href={`mailto:${ALLINFORMATION.EMAIL}`}>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-10 py-6 rounded-full text-lg font-semibold cursor-pointer"
-            >
-              Send an Email
-            </Button>
-          </a>
-        </div>
 
         {/* Map Section */}
         <div className="max-w-4xl aspect-[16/9] w-full mx-auto rounded-4xl p-1 bg-white h-[400px] overflow-hidden shadow-lg">

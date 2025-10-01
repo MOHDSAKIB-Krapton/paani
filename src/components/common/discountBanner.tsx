@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { ALLINFORMATION } from "@/constant";
 
 export default function DiscountBanner() {
   const [visible, setVisible] = useState(true);
@@ -13,8 +14,16 @@ export default function DiscountBanner() {
       }`}
     >
       <span>
-        🎉 Discount <b>50% OFF</b> – Limited Time!
+        🎉 Discount <b>20% OFF</b> - Limited Time!{" "}
+        <a
+          href={`tel:${ALLINFORMATION.PHONE_NUMBER}`}
+          title="Contact number"
+          className="underline pl-4 cursor-pointer"
+        >
+          Contact
+        </a>
       </span>
+
       <button
         onClick={() => setVisible(false)}
         title="Close"

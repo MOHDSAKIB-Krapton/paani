@@ -16,11 +16,11 @@ export default function WaterOrderBanner({
       size: "200ml",
       quantity: 24,
       price: "₹150",
-      imageUrl: "/images/200x20.webp",
+      imageUrl: "/images/200x24.webp",
     },
     {
       size: "500ml",
-      quantity: 24,
+      quantity: 20,
       price: "₹250",
       imageUrl: "/images/500x20.webp",
     },
@@ -28,7 +28,7 @@ export default function WaterOrderBanner({
       size: "1L",
       quantity: 12,
       price: "₹300",
-      imageUrl: "/images/1000x20.webp",
+      imageUrl: "/images/1000x12.webp",
     },
   ];
 
@@ -64,6 +64,7 @@ export default function WaterOrderBanner({
                     alt={`${pack.size} pack of Clear Premium Water`}
                     width={300}
                     height={300}
+                    loading="lazy"
                     className="object-cover w-full h-full"
                   />
                 </div>
