@@ -39,7 +39,7 @@ export default function FeaturesSlider() {
   };
 
   return (
-    <section className="py-16 md:py-24 min-h-screen max-w-7xl mx-auto  flex flex-col justify-center bg-gray-50 relative">
+    <section className="py-16 md:py-24 min-h-screen max-w-7xl mx-auto  flex flex-col justify-center relative">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold">
           Why Choose <span className="text-primary">Purelay Bottles?</span>
