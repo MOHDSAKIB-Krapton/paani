@@ -8,8 +8,8 @@ import { KEYWORDS } from "@/data/keywords";
 import HomePage from "@/page-partials/home";
 
 const url = `${HOST}`;
-const title = `Purelay Water: Premium Bottled Water for Healthy Hydration`;
-const description = `Purelay Water offers 100% pure and safe bottled water for optimal health and hydration. Enjoy refreshing, high-quality drinking water sourced responsibly, perfect for home, office, or on-the-go.`;
+const title = `Purelay Water: Custom Branded Bottles & Reliable Water Distribution`;
+const description = `Purelay Water provides premium custom-branded water bottles and reliable distribution for businesses, events, hotels, and cafés. Fast delivery and personalized branding solutions for every order.`;
 const keywords = KEYWORDS.HOME;
 
 export const metadata = {
