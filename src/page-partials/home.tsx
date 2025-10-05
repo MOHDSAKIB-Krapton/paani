@@ -5,6 +5,7 @@ import { CTABanner } from "@/components/cta-banner";
 import { WhyPurelayWater } from "@/components/why-us";
 import dynamic from "next/dynamic";
 import WaterOrderBannerClient from "@/components/water-order-client";
+import CEOFounderPurelay from "@/components/founder";
 
 const FeaturesSection = dynamic(() => import("@/components/features"), {
   loading: () => <div className="h-64 animate-pulse bg-gray-100" />,
@@ -28,6 +29,7 @@ export default function HomePage() {
       <BenefitsSection />
       <AboutSection />
       <FeaturesSection />
+      <CEOFounderPurelay />
       <CTABanner />
       <TestimonialsSection />
     </main>
