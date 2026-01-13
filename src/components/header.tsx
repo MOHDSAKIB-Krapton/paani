@@ -96,14 +96,14 @@ export function Header() {
             className="md:hidden relative w-full bg-background/95 backdrop-blur-xl border-b border-white/20"
           >
             <div className="container mx-auto px-6 py-6 flex flex-col space-y-6">
-              {["Home", "Distribution", "Contact"].map((item) => (
+              {NAVIGATION.map((item) => (
                 <a
-                  key={item}
-                  href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                  key={item.url}
+                  href={`${item.url}`}
                   className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {item.title}
                 </a>
               ))}
             </div>
