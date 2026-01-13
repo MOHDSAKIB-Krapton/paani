@@ -77,7 +77,8 @@ export function HeroSection() {
           <div className="relative">
             <div className="relative aspect-square rounded-[3rem] overflow-hidden bg-white">
               <img
-                src="../images/bottle.jpg"
+                // src="../images/bottle.jpg"
+                src="../images/custom/1.jpeg"
                 alt="Water distribution facility"
                 className="w-full h-full object-contain"
               />

@@ -9,6 +9,25 @@ import QueryPopup from "./common/queryPopup";
 import CircularText from "./CircularText";
 import FloatingContact from "./floating-contact";
 
+const NAVIGATION = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "Distribution",
+    url: "/distribution",
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+  },
+  {
+    title: "Custom Branding",
+    url: "/custom-branding-water",
+  },
+];
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,13 +44,13 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
-            {["Home", "Distribution", "Contact"].map((item) => (
+            {NAVIGATION.map((item) => (
               <a
-                key={item}
-                href={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                key={item.url}
+                href={`${item.url}`}
                 className="text-sm tracking-[0.15em] uppercase font-medium text-foreground/80 hover:text-primary transition-colors cursor-pointer"
               >
-                {item}
+                {item.title}
               </a>
             ))}
           </nav>

@@ -21,7 +21,9 @@ export const ALLINFORMATION = {
   // ADDRESS DETAILS
   LAT: "28.770610",
   LNG: "77.504980",
-  ADDRESS: "Aadarsh Colony, Muradnagar Ghaziabad, Uttar Pradesh 201206",
+  // ADDRESS: "Aadarsh Colony, Muradnagar Ghaziabad, Uttar Pradesh 201206",
+  ADDRESS:
+    "khasra No-1020 Village Morta Raj Nagar Extention, hum tum road, Opp. Raj Villas Society Ghaziabad, 201017 UP",
 
   URL: "https://purelaywater.com/",
 };
